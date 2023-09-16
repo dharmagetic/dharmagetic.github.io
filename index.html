@@ -20,7 +20,18 @@
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/pillar-1.css">
 
+	<style>
+		#accomplishments-list {
+			display: none;
+		}
 
+		/* Initially hide list items beyond the first 3 */
+		#accomplishments-list li:nth-child(n+4) {
+			display: none;
+		}
+
+
+	</style>
 </head> 
 
 <body>	
@@ -39,7 +50,7 @@
 							    <div class="title mb-3">Senior Python Developer</div>
 							    <ul class="list-unstyled">
 								    <li class="mb-2"><a class="text-link" href="mailto: dharmagetic@gmail.com"><i data-fa-transform="grow-3"></i>dharmagetic@gmail.com</a></li>
-								    <li><a class="text-link" href="https://telegram.me/bocatch"><i></i>tg @bocatch</a></li>
+								    <li><a class="text-link" href="https://telegram.me/bocatch"><i></i>telegram @bocatch</a></li>
 							    </ul>
 						    </div><!--//primary-info-->
 						    <div class="secondary-info col-auto mt-2">
@@ -55,7 +66,19 @@
 			    <section class="resume-section summary-section mb-5">
 				    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Career Summary</h2>
 				    <div class="resume-section-content">
-					    <p class="mb-0">A senior developer with 8+ years of experience in developing web applications using Python/Django/FastAPI/Flask/Aiohttp and related technologies. I have experience in both front-end and back-end development. I am a quick learner and have a good eye for detail. I am also a good communicator and team player and have a strong work ethic.</p>
+					    <p class="mb-0">
+						As a senior Python developer with over 8 years of experience, I've successfully delivered a wide range of projects, showcasing my expertise in Python/Django/FastAPI/Flask/Aiohttp and associated technologies. I've consistently demonstrated my ability to:
+							<ul>
+								<li>Led the development of the media Over-The-Top platform that provided rapid access to a global media content library, resulting in a 40% increase in user engagement and a 25% revenue boost within the first year.
+</li>
+								<li>Implemented money generating solutions, such as recurring subscriptions and integrated payment gateways, resulting in a seamless billing process and a 20% increase in revenue.
+</li>
+								<li>Designed and developed microservices using FastAPI, adhering to Clean Architecture, SOLID principles, and DDD patterns, which enhanced system scalability and reduced response times by 30%.
+</li>
+								<li>Mentored and managed a team of over 10 Python developers, fostering a collaborative environment and ensuring consistent project deliveries on time and within budget.
+</li>
+							</ul>
+						</p>
 				    </div>
 			    </section><!--//summary-section-->
 			    <div class="row">
@@ -119,6 +142,7 @@
 												<li>Organized project work using Kanban/Agile methodology, team size >10</li>
 												<li>Collaborating with DevOps on cloud server configuration, backup management, and migration to Kubernetes.</li>
 										    </ul>
+											<a href="javascript:void(0);" id="read-more-link" onclick="toggleAccomplishments()">Read more</a>
 									    </div><!--//resume-timeline-item-desc-->
 
 								    </article><!--//resume-timeline-item-->
@@ -250,7 +274,7 @@
 								            <div class="resume-skill-name">RabbitMQ, ZeroMQ, Kafka, NATs</div>
 								        </li>
 								        <li class="mb-2">
-								            <div class="resume-skill-name">Celery, dramatiq, rq</div>
+								            <div class="resume-skill-name">Celery, dramatiq, rq, </div>
 								        </li>
 										<li class="mb-2">
 								            <div class="resume-skill-name">Unittest, pytest</div>
@@ -262,10 +286,46 @@
 								            <div class="resume-skill-name">System Design</div>
 								        </li>
 										<li class="mb-2">
+								            <div class="resume-skill-name">Code Review, Mentoring, Project Leading</div>
+								        </li>
+							        </ul>
+									<h4 class="resume-skills-cat font-weight-bold">Frontend</h4>
+							        <ul class="list-unstyled">
+										<li class="mb-2">
+								            <div class="resume-skill-name">SPA, SSR</div>
+								        </li>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">Javascript, TypeScript</div>
+								        </li>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">VueJs 3, jquery</div>
+								        </li>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">HTML, CSS, SASS</div>
+								        </li>
+							        </ul>
+									<h4 class="resume-skills-cat font-weight-bold">Devops</h4>
+							        <ul class="list-unstyled">
+										<li class="mb-2">
+								            <div class="resume-skill-name">Production deploy Django, FastAPI</div>
+								        </li>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">AWS, VPS, Yandex Cloud</div>
+								        </li>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">Site reliability engineering</div>
+								        </li>
+							        </ul>
+									<h4 class="resume-skills-cat font-weight-bold">Management</h4>
+							        <ul class="list-unstyled">
+										<li class="mb-2">
 								            <div class="resume-skill-name">Agile, Scrum, Kanban</div>
 								        </li>
-										<li class="mb-2">
-								            <div class="resume-skill-name">Code Review, Mentoring, Project Leading</div>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">Lead 10 persons teams</div>
+								        </li>
+								        <li class="mb-2">
+								            <div class="resume-skill-name">Full-circle customer relations</div>
 								        </li>
 							        </ul>
 						        </div><!--//resume-skill-item-->
@@ -274,14 +334,38 @@
 				    </div>
 			    </div><!--//row-->
 		    </div><!--//resume-body-->
-		    
-		    
 	    </div>
     </article> 
-
-    
     <footer class="footer text-center pt-2 pb-5">
     </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    var initialItemCount = 3;
+    var allItemsVisible = false;
+
+    var accomplishmentsList = document.getElementById("accomplishments-list");
+    var readMoreLink = document.getElementById("read-more-link");
+
+    // Toggle visibility of list items
+    function toggleAccomplishments() {
+        for (var i = initialItemCount; i < accomplishmentsList.children.length; i++) {
+            accomplishmentsList.children[i].style.display = allItemsVisible ? "none" : "list-item";
+        }
+        readMoreLink.textContent = allItemsVisible ? "Read more" : "Read less";
+        allItemsVisible = !allItemsVisible;
+    }
+
+    // Attach click event to "Read more" link
+    readMoreLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        toggleAccomplishments();
+    });
+
+    // Initially hide extra list items
+    toggleAccomplishments();
+});
+
+</script>
 </body>
 </html> 
 
