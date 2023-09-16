@@ -21,6 +21,10 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/pillar-1.css">
 
 	<style>
+		a {
+			text-decoration: underline;
+			-moz-text-decoration-style: wavy;
+	   }
 		#accomplishments-list {
 			display: none;
 		}
@@ -30,7 +34,59 @@
 			display: none;
 		}
 
+		:root {
+            --base-font-size: 16px;
+			--ms-1:1.067;
+			--ms-2: 1.125;
+			--ms-3: 1.2;
+			--ms-4: 1.25;
+			--ms-5: 1.333;
+			--ms-6: 1.414;
+			--ms-7: 1.5;
+			--ms-8: 1.6;
+			--ms-9: 1.667;
+			--ms-10: 1.778;
+        }
 
+        /* Modular Scale */
+
+
+        /* Calculate font sizes based on the modular scale */
+        body {
+            font-size: var(--base-font-size);
+        }
+
+        h1 {
+            font-size: calc(var(--base-font-size) * var(--ms-8));
+        }
+
+        h2 {
+            font-size: calc(var(--base-font-size) * var(--ms-6));
+        }
+
+        h3 {
+            font-size: calc(var(--base-font-size) * var(--ms-4));
+        }
+
+        h4 {
+            font-size: calc(var(--base-font-size) * var(--ms-3));
+        }
+
+		div {
+            font-size: calc(var(--base-font-size) * var(--ms-1));
+        }
+		div li {
+            font-size: calc(var(--base-font-size) * var(--ms-1));
+        }
+		li {
+            font-size: calc(var(--base-font-size) * var(--ms-1));
+        }
+		div p {
+            font-size: calc(var(--base-font-size) * var(--ms-1));
+        }
+        p {
+            font-size: calc(var(--base-font-size) * var(--ms-1));
+        }
 	</style>
 </head> 
 
@@ -69,11 +125,11 @@
 					    <p class="mb-0">
 						As a senior Python developer with over 8 years of experience, I've successfully delivered a wide range of projects, showcasing my expertise in Python/Django/FastAPI/Flask/Aiohttp and associated technologies. I've consistently demonstrated my ability to:
 							<ul>
-								<li>Led the development of the media Over-The-Top platform that provided rapid access to a global media content library, resulting in a 40% increase in user engagement and a 25% revenue boost within the first year.
+								<li>Led the development of the media Over-The-Top cinema platform that provided rapid access to a global media content library, resulting in a 40% increase in user engagement and a 25% revenue boost within the first year.
 </li>
 								<li>Implemented money generating solutions, such as recurring subscriptions and integrated payment gateways, resulting in a seamless billing process and a 20% increase in revenue.
 </li>
-								<li>Designed and developed microservices using FastAPI, adhering to Clean Architecture, SOLID principles, and DDD patterns, which enhanced system scalability and reduced response times by 30%.
+								<li>Designed and developed monoliths & microservices using Django & FastAPI, adhering to Clean Architecture, SOLID principles, and DDD patterns, which enhanced system scalability and reduced response times by 30%.
 </li>
 								<li>Mentored and managed a team of over 10 Python developers, fostering a collaborative environment and ensuring consistent project deliveries on time and within budget.
 </li>
@@ -98,7 +154,7 @@
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
 <!--										    <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.</p>-->
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Project tvplus.by — an OTT platform for fast access to a global media content library for mobile and internet operators' customers</h4>
+										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Project tvplus.by — an online cinema platform for fast access to a global media content library for mobile and internet operators' customers</h4>
 <!--										    <p>Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>-->
 											<h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
 										    <ul class="list-inline">
@@ -259,34 +315,31 @@
 						            <h4 class="resume-skills-cat font-weight-bold">Backend</h4>
 							        <ul class="list-unstyled">
 								        <li class="mb-2">
-								            <div class="resume-skill-name">Python/Django</div>
+								            <div class="resume-skill-name">Python 3</div>
+								        </li>
+										<li class="mb-2">
+								            <div class="resume-skill-name">Django/Django Rest Framework</div>
 								        </li>
 								        <li class="mb-2">
 								            <div class="resume-skill-name">Flask/FastAPI</div>
 								        </li>
 								        <li class="mb-2">
-								            <div class="resume-skill-name">PostgreSQL, MySQL</div>
+								            <div class="resume-skill-name">PostgreSQL, PostGIS, MySQL, MariaDB</div>
 								        </li>
 										<li class="mb-2">
-								            <div class="resume-skill-name">MongoDB, Redis, Elasticsearch</div>
+								            <div class="resume-skill-name">MongoDB, Redis, ElasticSearch</div>
 								        </li>
 										<li class="mb-2">
 								            <div class="resume-skill-name">RabbitMQ, ZeroMQ, Kafka, NATs</div>
 								        </li>
 								        <li class="mb-2">
-								            <div class="resume-skill-name">Celery, dramatiq, rq, </div>
+								            <div class="resume-skill-name">Celery & Beat, taskiq-fastapi, dramatiq, rq </div>
 								        </li>
 										<li class="mb-2">
-								            <div class="resume-skill-name">Unittest, pytest</div>
+								            <div class="resume-skill-name">Unittest, pytest, selenium</div>
 								        </li>
 										<li class="mb-2">
 								            <div class="resume-skill-name">Docker, Kubernetes</div>
-								        </li>
-										<li class="mb-2">
-								            <div class="resume-skill-name">System Design</div>
-								        </li>
-										<li class="mb-2">
-								            <div class="resume-skill-name">Code Review, Mentoring, Project Leading</div>
 								        </li>
 							        </ul>
 									<h4 class="resume-skills-cat font-weight-bold">Frontend</h4>
@@ -319,13 +372,19 @@
 									<h4 class="resume-skills-cat font-weight-bold">Management</h4>
 							        <ul class="list-unstyled">
 										<li class="mb-2">
-								            <div class="resume-skill-name">Agile, Scrum, Kanban</div>
+								            <div class="resume-skill-name">Customer Development</div>
 								        </li>
-								        <li class="mb-2">
+										<li class="mb-2">
+								            <div class="resume-skill-name">System Design</div>
+								        </li>
+										<li class="mb-2">
 								            <div class="resume-skill-name">Lead 10 persons teams</div>
 								        </li>
-								        <li class="mb-2">
-								            <div class="resume-skill-name">Full-circle customer relations</div>
+										<li class="mb-2">
+								            <div class="resume-skill-name">Code Review, Mentoring, Project Leading</div>
+								        </li>
+										<li class="mb-2">
+								            <div class="resume-skill-name">Following Agile with Scrum, Kanban methodologies</div>
 								        </li>
 							        </ul>
 						        </div><!--//resume-skill-item-->
@@ -338,34 +397,34 @@
     </article> 
     <footer class="footer text-center pt-2 pb-5">
     </footer>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    var initialItemCount = 3;
-    var allItemsVisible = false;
+<!--<script>-->
+<!--    document.addEventListener("DOMContentLoaded", function () {-->
+<!--    var initialItemCount = 3;-->
+<!--    var allItemsVisible = false;-->
 
-    var accomplishmentsList = document.getElementById("accomplishments-list");
-    var readMoreLink = document.getElementById("read-more-link");
+<!--    var accomplishmentsList = document.getElementById("accomplishments-list");-->
+<!--    var readMoreLink = document.getElementById("read-more-link");-->
 
-    // Toggle visibility of list items
-    function toggleAccomplishments() {
-        for (var i = initialItemCount; i < accomplishmentsList.children.length; i++) {
-            accomplishmentsList.children[i].style.display = allItemsVisible ? "none" : "list-item";
-        }
-        readMoreLink.textContent = allItemsVisible ? "Read more" : "Read less";
-        allItemsVisible = !allItemsVisible;
-    }
+<!--    // Toggle visibility of list items-->
+<!--    function toggleAccomplishments() {-->
+<!--        for (var i = initialItemCount; i < accomplishmentsList.children.length; i++) {-->
+<!--            accomplishmentsList.children[i].style.display = allItemsVisible ? "none" : "list-item";-->
+<!--        }-->
+<!--        readMoreLink.textContent = allItemsVisible ? "Read more" : "Read less";-->
+<!--        allItemsVisible = !allItemsVisible;-->
+<!--    }-->
 
-    // Attach click event to "Read more" link
-    readMoreLink.addEventListener("click", function (event) {
-        event.preventDefault();
-        toggleAccomplishments();
-    });
+<!--    // Attach click event to "Read more" link-->
+<!--    readMoreLink.addEventListener("click", function (event) {-->
+<!--        event.preventDefault();-->
+<!--        toggleAccomplishments();-->
+<!--    });-->
 
-    // Initially hide extra list items
-    toggleAccomplishments();
-});
+<!--    // Initially hide extra list items-->
+<!--    toggleAccomplishments();-->
+<!--});-->
 
-</script>
+<!--</script>-->
 </body>
 </html> 
 
